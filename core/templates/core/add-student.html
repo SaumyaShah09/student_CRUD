@@ -1,0 +1,24 @@
+{% extends 'core/base.html' %}
+{% block title %} Home {% endblock title %}
+{% block main_content %}
+    <html>
+        <body>
+        <section class="container">
+            <div class="row justify-content-around text-center mt-3">
+             <div class="col-sm-8">
+                 <h3>DATA TABLE</h3> <br>
+             </div>
+                <div class="row justify-content-around {% comment %}text-center{% endcomment %} mt-3">
+                    <div class="col-sm-41">
+                        <form action="" method="POST" class="bg-white p-3 rounded shadow">
+                            {% csrf_token %}
+                            {{ form.as_p }}
+                            <input type="submit" value="Submit" class="btn btn-primary">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        </body>
+    </html>
+{% endblock main_content%}
