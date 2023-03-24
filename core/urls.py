@@ -4,4 +4,5 @@ urlpatterns=[
     path('',Home.as_view(),name="home"),
     path('add-student/',Add_student.as_view(),name='add-student'),
     path('delete-student/',delete_Student.as_view(),name='delete-student'),
+    path('edit-student/<int:id>/',edit_student.as_view(),name='edit-student'),
 ]

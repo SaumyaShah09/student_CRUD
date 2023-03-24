@@ -32,12 +32,22 @@
                             <td>{{ stud.roll }}</td>
                             <td>{{ stud.name }}</td>
                             <td>{{ stud.city }}</td>
-                            <td>
-                                <form action="{% url 'delete-student' %}" method="POST">
-                                    {% csrf_token %}
-                                    <input type="hidden" name="id" value="{{ stud.id }}">
-                                    <input type="submit" value="Delete" class="btn btn-danger btn-sm">
-                                </form>
+                            <td class="aline-inline">
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <form action="{% url 'delete-student' %}" method="POST">
+                                                {% csrf_token %}
+                                                <input type="hidden" name="id" value="{{ stud.id }}">
+                                                <input type="submit" value="Delete" class="btn btn-danger btn-sm">
+                                            </form>
+                                        </td>
+                                        <td>
+                                            <a href="{% url 'edit-student' stud.id %}" class="btn btn-sm btn-info">Edit</a>
+                                        </td>
+                                    </tr>
+                                </table>
+
                             </td>
                         </tr>
                       {% endfor %}
